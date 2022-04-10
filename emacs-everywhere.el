@@ -93,9 +93,9 @@ When nil, nothing is executed, and pasting is not attempted."
   :group 'emacs-everywhere)
 
 (defcustom emacs-everywhere-markdown-windows
-  '("Reddit" "Stack Exchange" "Stack Overflow" ; Sites
-    "Discord" "Element" "Slack" "HedgeDoc" "HackMD" "Zulip" ; Web Apps
-    "Pull Request" "Issue" "Comparing .*\\.\\.\\.") ; Github
+  '("Stack Exchange" "Stack Overflow" "tipofmytongue" "reddit" ; Sites
+    "Pull Request" "Issue" "Comparing .*\\.\\.\\." ; Github
+    "Discord")
   "For use with `emacs-everywhere-markdown-p'.
 Patterns which are matched against the window title."
   :type '(rep string)
@@ -462,14 +462,25 @@ return windowTitle"))
 
 ;;; Secondary functionality
 
+;; (defun emacs-everywhere-set-frame-name ()
+;;   "Set the frame name based on `emacs-everywhere-frame-name-format'."
+;;   (set-frame-name
+;;    (format emacs-everywhere-frame-name-format
+;;            (emacs-everywhere-app-class emacs-everywhere-current-app)
+;;            (truncate-string-to-width
+;;             (emacs-everywhere-app-title emacs-everywhere-current-app)
+;;             45 nil nil "…"))))
+
 (defun emacs-everywhere-set-frame-name ()
   "Set the frame name based on `emacs-everywhere-frame-name-format'."
   (set-frame-name
    (format emacs-everywhere-frame-name-format
-           (emacs-everywhere-app-class emacs-everywhere-current-app)
+           ;; (emacs-everywhere-app-class emacs-everywhere-current-app)
            (truncate-string-to-width
             (emacs-everywhere-app-title emacs-everywhere-current-app)
-            45 nil nil "…"))))
+            130 nil nil "…") ; 45 ; 90
+	   (emacs-everywhere-app-class emacs-everywhere-current-app)
+	   )))
 
 (defun emacs-everywhere-remove-trailing-whitespace ()
   "Move point to the end of the buffer, and remove all trailing whitespace."
