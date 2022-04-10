@@ -9,7 +9,7 @@
 #+html: <img src="https://img.shields.io/badge/-MacOS-lightgrey?logo=apple&style=flat-square&logoColor=black">
 #+html: <a href="https://www.buymeacoffee.com/tecosaur"><img src="https://img.shields.io/badge/Buy_me_a_coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black"></a></p>
 
-/This is fork of Tecosaur's Emacs every package. I added things to support easier archiving of my comments. Though the setup is complicated and not recommended for general use./
+/This is fork of Tecosaur's Emacs everywhere package. I added things to support easier archiving of my comments. Though the setup is complicated and not recommended for general use./
 
 A re-implementation of the fantastic idea in [[https://github.com/zachcurry/emacs-anywhere][zachcurry/emacs-anywhere]].
 
